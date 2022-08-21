@@ -19,5 +19,4 @@
     * Nota: Puedes concatenar varios directorios
 ---
 3. *pwd* (print working directory): Imprime textualmente la direccion del directorio actual
-    * Este comando es una
-
+    * Este comando 
