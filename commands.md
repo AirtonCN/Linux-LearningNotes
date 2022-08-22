@@ -20,9 +20,12 @@
 ---
 3. *pwd* (print working directory): Imprime textualmente la direccion del directorio actual
     * Este comando solamente se usa para eso
-4. *su* (super user): Ingresa al modo administrativo
+---
+4. *su* (substitute user): Ingresa al modo administrativo
     * Este comando solicitara una contraseña
     * *su -*: Ingresa al modo administrativo
     * *su -l*: Ingresa al modo administrativo
     * *su --login*: Ingresa al modo administrativo
-5. 
+---
+5. *sl* (train in shell): Este comando ejecuta una animacion de un tren a vapor en el shell.
+    * Este comando solo se puede ejecutar en el modo super usuario
