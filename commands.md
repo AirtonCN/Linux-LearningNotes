@@ -19,4 +19,10 @@
     * Nota: Puedes concatenar varios directorios
 ---
 3. *pwd* (print working directory): Imprime textualmente la direccion del directorio actual
-    * Este comando puede
+    * Este comando solamente se usa para eso
+4. *su* (super user): Ingresa al modo administrativo
+    * Este comando solicitara una contraseña
+    * *su -*: Ingresa al modo administrativo
+    * *su -l*: Ingresa al modo administrativo
+    * *su --login*: Ingresa al modo administrativo
+5. 
