@@ -30,10 +30,13 @@
 5. ***sl*** (Steam locomotive): Este comando ejecuta una animacion de un tren a vapor en el shell.
     * Este comando solo se puede ejecutar en el modo administrativo
 ---
-6. ***sudo*** (substitute user do): Este comando permite ejecutar cualquier otro en modo tambien ejecuta como usuario root administrativo sin crear otro shell.
+6. ***sudo*** (substitute user do): Este comando permite ejecutar cualquier otro en modo administrativo tambien ejecuta como usuario root administrativo sin crear otro shell.
     * Tambien solicittara una contraseña, una sola vez
     * *sudo sl*: Ejecuta la animacion del tren a vapor
-7. ***chmod*** (Change acces mode): Con este comando cambia los permisos de un archivo o directorio
+---
+7. ***exit*** (exit): Se usa para salir del modo administrativo *su*
+---
+8. ***chmod*** (Change acces mode): Con este comando cambia los permisos de un archivo o directorio
     * *chmod u+w archivo*: Agrega el permiso de lectura al usuario prop.
     * *chmod u-w archivo*: Quita el permiso de lectura al usuario prop.
     * *chmod u+r archivo*: Agrega el permiso de lectura al usuario prop.
