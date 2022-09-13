@@ -76,6 +76,14 @@
     * Sintaxis desde cualquier directorio: *cp* [origen]*/*[archivo] [destino].
     * Sintaxis para un copiar archivo en directorio actual: *cp* [archivo] [destino].
     * Sintaxis para copiar un archivo al directorio actual: *cp* [origen]*/* *.*.
+---
+14. ***dd*** (Disk/Data Duplicate): Copia/clona particiones de disco completas, crea archivos con un tamalo especifico, realiza backups, copia datos no procesados.
+    * Sintaxis para crear archivo de un tamaño específico: *dd* *if=*[entrada] *of=*[salida] *bs=*[tamaño] *count=*[cantidad]
+    * *if* (Input file): Direccion completa del archivo de entrada.
+    * *of* (Output file): Direccion completa del archivo de salida.
+    * *bs* (Block size): Tamañao de bloque en bytes, se puede usar K,M,G,T.
+    * *count* (Cuenta): Cuantos bloques del tamaño extablecido se usaran.
+    * Para copiar particiones discos o directorios completos no es necesario especificar el tamaño. Sintaxis: *dd* *if=*[entrada] *of=*[salida].
 
 
 
