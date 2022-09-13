@@ -1,5 +1,5 @@
 ## Comandos Linux Unhatched
-
+### Se describen comandos sintaxis y ejemplos.
 
 1. ***ls*** (list): Muestra todos los archivos y directorios del directiorio actual.
     * *sl -l*: Muestra una lista detallada de los acchivos y directorios de la carpeta actual.
@@ -18,6 +18,7 @@
     * *cd /var/*: Cambia al directorio var sin importar enq ue directorio estas.
     * *cd ..*: Retrocede un directorio.
     * *cd /*: Cambia al directorio principal.
+    * *cd .*: Señala al directorio actual.
     * Nota: Puedes concatenar varios directorios.
     * Puedes ingresar a cualquier directorio desde cualquier directorio con la siguiente sintaxis: *cd* [directorio raíz]*/*[subdirectorio]*/*[subdirectorio].
 ---
@@ -71,7 +72,16 @@
     * *head -n 5 alpha.txt*: muestra las primeras 5 lineas del archivo alpha.txt contando desde arriba.
     * *tail -n 5 alpha.txt*: muestra las ultimas 5 lineas del archivo alpha.txt contando desde abajo.
 ---
+13. ***cp*** (Copy): Copia un archivo y envialo a un directorio destino, Se debe tener como minimo permisos de ejecucion y lectura del archivo y el directorio en el que se encuentra. Se debe tener siempre estos permisos en el directorio /home y /tmp 
+    * Sintaxis desde cualquier directorio: *cp* [origen]*/*[archivo] [destino].
+    * Sintaxis para un copiar archivo en directorio actual: *cp* [archivo] [destino].
+    * Sintaxis para copiar un archivo al directorio actual: *cp* [origen]*/* *.*.
+
+
+
+
+---
 ---
 ### Anexos
 
-a. Consola vs Shell vs CLI vs
+a. Consola vs Shell vs CLI vs Terminal
