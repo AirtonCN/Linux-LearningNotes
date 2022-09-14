@@ -131,6 +131,7 @@
 17. ***grep*** (Global regular expresion print): Filtra entradas de un archivo, busca e imprime y una linea de un archivo de acuerdo aun patron definido en el comando.
     * Sintaxis: ***grep [opciones] [patron] [archivo]***
     * ***grep sysadmin passwd***: Muestra detalles del usuario sysadmin, detalles que se encuentran en el archivo passwd, mas info de este archivo en linux essentials.
+    * Este comando puede interpretar patrones de busqueda mucho mas complejos.
 
 ---
 ---
@@ -145,5 +146,24 @@
     * ***.*** (Punto): Apunta al directorio actual.
     * ***..*** (Punto): Apunta al directorio anterior.
     * Todo comando que acepte como argumento un archivo, por ejemplo: ***comando [archivo]***. Puede aceptar la direccion del archivo sin importar en que directorio te encuentres.
+* Regex (Regular Extended Expressions): Expresiones regulares extendidas que no todos los comandos aceptan a menos que se use el argumento adecuado.
+
+    |Regex|Descripcion|
+    |---|---|
+    |***.***|Cualquier caracter individual|
+    |***[ ]***|Cualquier caracter especificado|
+    |***[^]***|Cualquier caracter que no sea el especificado|
+    |***&ast;***|Cero o igual al caracter anterior|
+    |***^***|Como primer caracter indica que el patron debera estar al principio de la linea para coincidir, de lo contrario se lo tomara como **^**|
+    |***&dollar;***|Como ultimo caracter indica que el patron debera estar al final de la linea para coincidir, de lo contrario se tomara como ***$***|
+    
+    Expresiones para usar con ***egrep*** o ***grep -E***
+    |Regex|Descripcion|
+    |---|---|
+    |***+***|Uno o mas del patrón anterior|
+    |***?***|El patron introducido es opcional|
+    |***{ }***|Especificar un minimo o un maximo de coincidencias para el patron introducido|
+    |***&vert;***|Alternancia - or lógico|
+    |***( )***|Crea grupos|
 ```
 ```
