@@ -132,6 +132,14 @@
     * Sintaxis: ***grep [opciones] [patron] [archivo]***
     * ***grep sysadmin passwd***: Muestra detalles del usuario sysadmin, detalles que se encuentran en el archivo passwd, mas info de este archivo en linux essentials.
     * Este comando puede interpretar patrones de busqueda mucho mas complejos.
+    * ***grep 'r..d' alpha.txt***: Encuentra todos las coincidencias con el patron 'r..d' donde los puntos simbolizan cualquier caracter.
+    * ***grep '[0-9]' profile.txt***: Encuentra caracteres numéricos y muestra las lineas donde estan.
+    * ***grep '[^0-9]' profile.txt***: Muestra lineas que contengan carácteres no numéricos, omite las que tienen carácteres puramente numéricos.
+    * ***grep 're*d' red.txt***: Muestra lineas que contengan el caracter "e" repetido de manera corrida, o en su defecto, su ausencia total.Tambien deben contener "r" al principio y "d" al final.   
+    * ***grep 'r[oe]*d' red.txt***: Muestra lineas que contengan los caracteres "o" o "e" repetido de manera corrida, o en su defecto, la auscencia total de ambos. Tambien deben contener "r" al principio y "d" al final de cada linea.
+    * ***grep 'red'***: El shell nos permitira introducir caracteres para luego identificar aquellas lineas que contengan "red" en el texto introducido.
+
+
 
 ---
 ---
@@ -165,5 +173,7 @@
     |***{ }***|Especificar un minimo o un maximo de coincidencias para el patron introducido|
     |***&vert;***|Alternancia - or lógico|
     |***( )***|Crea grupos|
+
+    Existen mas expresiones regulares extendidas, vease linux essentials para mas información.
 ```
 ```
