@@ -132,12 +132,36 @@
     * Sintaxis: ***grep [opciones] [patron] [archivo]***
     * ***grep sysadmin passwd***: Muestra detalles del usuario sysadmin, detalles que se encuentran en el archivo passwd, mas info de este archivo en linux essentials.
     * Este comando puede interpretar patrones de busqueda mucho mas complejos.
+    * Se debe poner comillas simples en el patron para que este no sea confundido con un comando especial del shell.
     * ***grep 'r..d' alpha.txt***: Encuentra todos las coincidencias con el patron 'r..d' donde los puntos simbolizan cualquier caracter.
     * ***grep '[0-9]' profile.txt***: Encuentra caracteres numéricos y muestra las lineas donde estan.
     * ***grep '[^0-9]' profile.txt***: Muestra lineas que contengan carácteres no numéricos, omite las que tienen carácteres puramente numéricos.
     * ***grep 're*d' red.txt***: Muestra lineas que contengan el caracter "e" repetido de manera corrida, o en su defecto, su ausencia total.Tambien deben contener "r" al principio y "d" al final.   
     * ***grep 'r[oe]*d' red.txt***: Muestra lineas que contengan los caracteres "o" o "e" repetido de manera corrida, o en su defecto, la auscencia total de ambos. Tambien deben contener "r" al principio y "d" al final de cada linea.
     * ***grep 'red'***: El shell nos permitira introducir caracteres para luego identificar aquellas lineas que contengan "red" en el texto introducido.
+
+----
+
+18. ***shutdown*** (Apagar): Apaga el sistema, para ello debes definir un temporizador o una hora en su defecto. Se requiere ser usuario administrador para ejecutar este comando.
+    * Sintaxis: ***shutdowm [hora/tiempo] [banner_opcional]***
+    * ***shutdown now***: Apaga el sistema ahora mismo.
+    * ***shutdown 22:54***: Se apagara el sistema a las 22:54 UTC, solo se puede introducir en este horario. Tu zona horaria es UTC-5.
+    * ***shutdown +1 "Alamoz"***: Se apaga el sistema en un minuto y se muestra el mensaje en broadcast: Alamoz.
+
+---
+
+19. ***ifconfig*** y ***iwconfig*** (Interface configuration y Wireless interface configuration): Ambos comandos sirven para mostrar la configuracion de red alámbrica e inálambrica.
+    * Sintaxis: ***ifconfig [opcion]***
+    * ***ifconfig***: Muestra informacion de todas las interfaces de red de nuestro sistema.
+
+---
+
+20. ***ping*** (Proviene de ping-pong): Envia paquetes a un dominio o direccion ip y espera una respuesta.
+    * Sintaxis: ***ping [ip/dominio]***
+    * 
+
+
+
 
 
 
@@ -154,6 +178,10 @@
     * ***.*** (Punto): Apunta al directorio actual.
     * ***..*** (Punto): Apunta al directorio anterior.
     * Todo comando que acepte como argumento un archivo, por ejemplo: ***comando [archivo]***. Puede aceptar la direccion del archivo sin importar en que directorio te encuentres.
+* Detener comandos.
+    * Ctrl+D
+    * Ctrl+C
+
 * Regex (Regular Extended Expressions): Expresiones regulares extendidas que no todos los comandos aceptan a menos que se use el argumento adecuado.
 
     |Regex|Descripcion|
