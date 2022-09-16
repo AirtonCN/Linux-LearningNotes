@@ -153,6 +153,27 @@
 19. ***ifconfig*** y ***iwconfig*** (Interface configuration y Wireless interface configuration): Ambos comandos sirven para mostrar la configuracion de red alámbrica e inálambrica.
     * Sintaxis: ***ifconfig [opcion]***
     * ***ifconfig***: Muestra informacion de todas las interfaces de red de nuestro sistema.
+    
+        ```
+            root@localhost:~# ifconfig                                     
+        eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:01:02                         
+                inet addr:192.168.1.2  Bcast:192.168.1.255  Mask:255.255.255.0        
+                UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1                    
+                RX packets:59 errors:0 dropped:0 overruns:0 frame:0                   
+                TX packets:86 errors:0 dropped:0 overruns:0 carrier:0                 
+                collisions:0 txqueuelen:1000                                          
+                RX bytes:4346 (4.3 KB)  TX bytes:5602 (5.6 KB)                        
+                                                                                        
+        lo        Link encap:Local Loopback                                             
+                inet addr:127.0.0.1  Mask:255.0.0.0                                   
+                UP LOOPBACK RUNNING  MTU:65536  Metric:1                              
+                RX packets:2 errors:0 dropped:0 overruns:0 frame:0                    
+                TX packets:2 errors:0 dropped:0 overruns:0 carrier:0                  
+                collisions:0 txqueuelen:1000                                          
+                RX bytes:100 (100.0 B)  TX bytes:100 (100.0 B)  
+        ```
+
+    * En el ejemplo anterior se muestra la interfaz ethernet 0 y el loopback(Interfaz que sirve para que la maquina envie informacion basada en red a si misma).
 
 ---
 
@@ -161,32 +182,39 @@
     * ***ping 192.168.1.2***: Envia paquetes icmp a la ip introducida de manera indefinida.
     * ***ping -c 4 192.168.1.2***: Envia 4 paquetes icmp a la ip introducida.
 
-    ```
-    root@localhost:~# ping -c 4 192.168.1.2                                       
-    PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.                          
-    64 bytes from 192.168.1.2: icmp_req=1 ttl=64 time=0.051 ms                    
-    64 bytes from 192.168.1.2: icmp_req=2 ttl=64 time=0.064 ms                    
-    64 bytes from 192.168.1.2: icmp_req=3 ttl=64 time=0.050 ms                    
-    64 bytes from 192.168.1.2: icmp_req=4 ttl=64 time=0.043 ms                    
-              
-    --- 192.168.1.2 ping statistics ---                                           
-    4 packets transmitted, 4 received, 0% packet loss, time 2999ms                
-    rtt min/avg/max/mdev = 0.043/0.052/0.064/0.007 ms 
-    ```
+        ```
+        root@localhost:~# ping -c 4 192.168.1.2                                       
+        PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.                          
+        64 bytes from 192.168.1.2: icmp_req=1 ttl=64 time=0.051 ms                    
+        64 bytes from 192.168.1.2: icmp_req=2 ttl=64 time=0.064 ms                    
+        64 bytes from 192.168.1.2: icmp_req=3 ttl=64 time=0.050 ms                    
+        64 bytes from 192.168.1.2: icmp_req=4 ttl=64 time=0.043 ms                    
+                
+        --- 192.168.1.2 ping statistics ---                                           
+        4 packets transmitted, 4 received, 0% packet loss, time 2999ms                
+        rtt min/avg/max/mdev = 0.043/0.052/0.064/0.007 ms 
+        ```
     
-    * El exito del comando indica una buena conectividad a la ip dominio o host que se introdujo en el comando.
+    * El éxito del comando indica una buena conectividad a la ip dominio o host que se introdujo en el comando.
 
 ---
 
-21. ***ps*** (Process Status): 
+21. ***ps*** (Process Status): Muestra detalles de los procesos que se estan ejecutando actualmente.
+    * Sintaxis: ***ps [opciones]***
+    * ***ps***: Muestra lo siguiente.
     
-    ```
-    sysadmin@localhost:~$ ps
-    PID TTY          TIME CMD
-    80 pts/0        00:00:00 bash
-    94 pts/0        00:00:00 ps
-    ```
-
+        ```
+        sysadmin@localhost:~$ ps
+        PID TTY          TIME CMD
+        80 pts/0        00:00:00 bash
+        94 pts/0        00:00:00 ps
+        ```
+    * Se puede observar en la ultima columna que los procesos en ejecucion son bash y el comando ps.
+    * PID (Process ID): Es el identificador unico de cada proceso.
+    * TTY (Teletype): Nombre o tipo de la terminal en donde el proceso esta funcionando.
+    * CMD (Command): El comando que inició el proceso.
+    * ***ps -e***: Muestra todos los procesos que ejecuta el sistema y no solo los del shell.
+    * ***ps -ef***: Muestra todos los procesos que ejecuta el sistema y no solo los del shell(de manera mas detallada).
 
 
 
