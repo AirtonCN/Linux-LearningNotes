@@ -158,7 +158,34 @@
 
 20. ***ping*** (Proviene de ping-pong): Envia paquetes a un dominio o direccion ip y espera una respuesta.
     * Sintaxis: ***ping [ip/dominio]***
-    * 
+    * ***ping 192.168.1.2***: Envia paquetes icmp a la ip introducida de manera indefinida.
+    * ***ping -c 4 192.168.1.2***: Envia 4 paquetes icmp a la ip introducida.
+
+    ```
+    root@localhost:~# ping -c 4 192.168.1.2                                       
+    PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.                          
+    64 bytes from 192.168.1.2: icmp_req=1 ttl=64 time=0.051 ms                    
+    64 bytes from 192.168.1.2: icmp_req=2 ttl=64 time=0.064 ms                    
+    64 bytes from 192.168.1.2: icmp_req=3 ttl=64 time=0.050 ms                    
+    64 bytes from 192.168.1.2: icmp_req=4 ttl=64 time=0.043 ms                    
+              
+    --- 192.168.1.2 ping statistics ---                                           
+    4 packets transmitted, 4 received, 0% packet loss, time 2999ms                
+    rtt min/avg/max/mdev = 0.043/0.052/0.064/0.007 ms 
+    ```
+    
+    * El exito del comando indica una buena conectividad a la ip dominio o host que se introdujo en el comando.
+
+---
+
+21. ***ps*** (Process Status): 
+    
+    ```
+    sysadmin@localhost:~$ ps
+    PID TTY          TIME CMD
+    80 pts/0        00:00:00 bash
+    94 pts/0        00:00:00 ps
+    ```
 
 
 
@@ -203,5 +230,10 @@
     |***( )***|Crea grupos|
 
     Existen mas expresiones regulares extendidas, vease linux essentials para mas información.
+
+### Notas
+    
+* Realizar una aclaración de los comandos ping, ifconfig y ps, en onenote.
+
 ```
 ```
