@@ -217,6 +217,7 @@
     * ***ps -ef***: Muestra todos los procesos que ejecuta el sistema y no solo los del shell(de manera mas detallada).
     *
     *
+    *
 
 
 
