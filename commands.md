@@ -215,9 +215,27 @@
     * CMD (Command): El comando que inició el proceso.
     * ***ps -e***: Muestra todos los procesos que ejecuta el sistema y no solo los del shell.
     * ***ps -ef***: Muestra todos los procesos que ejecuta el sistema y no solo los del shell(de manera mas detallada).
-    *
-    *
-    *
+
+---
+
+22. ***apt/apt-get*** (Advanced Package Tool): Permite gestionar paquetes, ya sea para instalacion actualizacion o eliminacion de programas. Algunos comandos requieren permisos administrativos para poder funcionar.
+    * Sintaxis: ***apt-get [opciones]***
+    * ***sudo apt-get update***: Muestra la lista de paquetes disponibles. 
+    * Sintaxis para buscar paquetes: ***apt-get search [búsqueda]*** Este comando se peude ejecutar sin utilizar el anterior por si te cabían dudas.
+    * ***apt-cache search cowsay***: Busca el paquete "cowsay" dentro de la lista de paquetes disponibles. (Se pueden utilizar mas palabras para buscar)
+    * ***sudo apt-get install cowsay***: Instala el paquete cowsay, una vaca que puede decir lo que quieras usando la sintaxis ***cowsay [mensaje]*** Siempre utilizar el argumento entre comillas simples.
+    * El comando de instalación tambien puede actualizar programas si estos ya fueron instalados con anterioriad, podemos decir que sirve para instalar y actualizar paquetes.
+    * Se puede actualizar todos los paquetes usando el comando ***apt-get update*** para actualizar la cache y ***apt-get upgrade*** para actualizar todos los paquetes.
+    * ***apt-get remove [paquete]***: Elimina el paquete excepto los archivos de configuración.
+    * ***apt-get purge [paquete]***: Elimina el paquete en su totalidad.
+    
+
+
+
+
+
+    
+    
 
 
 
