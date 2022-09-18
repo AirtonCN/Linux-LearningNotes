@@ -228,18 +228,164 @@
     * Se puede actualizar todos los paquetes usando el comando ***apt-get update*** para actualizar la cache y ***apt-get upgrade*** para actualizar todos los paquetes.
     * ***apt-get remove [paquete]***: Elimina el paquete excepto los archivos de configuración.
     * ***apt-get purge [paquete]***: Elimina el paquete en su totalidad.
+
+---
+
+23. ***passwd*** (Password): Cambia o acutaliza la contraseña propia o de otros usuarios siento root.
+    * Sintaxis: ***passwd [opciones] [usuario]***
+    * ***passwd***: Actualiza la contraseña del usuario actual:
+    * ***passwd sysadmin***: Actualiza la contraseña del usuario sysadmin.
+    * ***passwd -S sysadmin***: Obten informacion de la contraseña del usuario sysadmin.
+        ```
+        sysadmin@localhost:~$ passwd -S sysadmin                                        
+        sysadmin P 12/20/2017 0 99999 7 -1
+        ```
+        |Campo|Ejemplo|Significado|
+        |---|---|---|
+        |Nombre de usuario|sysadmin|El nombre de usuario|
+        |Estado de la contraseña|P|P: Indica que es una contraseña utilizable<br>L: Indica que la contraseña esta bloqueada<br>NP: Indica que no hay contraseña|
+        |Fecha de actualización|12/20/2017|La fecha en que la contraseña fue actualizada por ultima vez|
+        |Mínimo|0|Mínimo número de días que pueden pasar antes de que la contraseña sea actualizada|
+        |Máximo|99999|Máximo de dias que restan para que la contraseña se aactualizada|
+        |Aviso|7|El número de dias prescedentes a la expiración de la contraseña para que el usuario reciba el aviso|
+        |Inactividad|-1|El número de dias despues de la expiración de la contraseña que la cuenta del usuario se mantendra activa|
+
+---
+
+24. ***>*** (Redireccionar): Redirecciona ya sea la informacion que muestra el comando(STDOUT) o el comando y opciones escritas en el shell(STDIN), tambien puede redireccionar el resultado de un comando fallido(STDERR). Todo se puede almacenar en un archivo .txt. En linux unhatched solo se vera como redireccionar STDIN.
+    * Sintaxis: ***[comando] > [archivo]***
+    * ***cat food.txt > newfile1.txt***: Almacena el contenido de food.txt en el nuevo archivo newfile1.txt.
+
+---
+
+25. ***echo*** (Eco): Muestra como salida el argumento que nosostros escribamos, es util para agregar o sobreescribir información de un archivo.
+    * Sintaxis: ***echo [mensaje]***
+    * ***echo wao***: Muestra el mensaje "wao". 
+    * ***echo "I like Food." > newfile1.txt***: Sobre escribe el contenido de newfile1.txt colocando en su lugar "I like food.", Sin comillas.
+    * ***echo "I like Food." >> newfile1.txt***: Agrega una linea con el texto escrito sin sobreescribir el archivo.
+
+---
+## Editor de texto
+* ***vi*** (Virtual instrument): Es la aplicación de edición de texto por defecto que toda distribución de linux tiene. De echo es la unca aplicacion que se enfoca en esto que este presente en todas las distribuciones.
+* ***vim*** (Improved vi); Muchas distribuciones utilizan una version mejorada llamada vim, Este presenta funciones adicionales, es muy diferente a vi que digamos.
+* ***vi newfile.txt***: Crea un nuevo archivo y edita su contenido
+* Existen 3 modos para editar un texto, Modo comando (El programa se inicia en este modo por defecto), modo incersion y modo ex.
+* Desde el modo de comando se puede acceder a los otros modos y se puede regresar al mismo presionando la tecla ESC.
+
+### **A continuación se listaran los comandos del editor de texto**
+
+<br>
+
+* Modo comando: Movimiento, Tambien se pueden usar las flechas para desplazarse por el archivo de texto.
+
+    |Movimiento|Resultado|
+    |---|---|
+    |h|Un carácter a la izquierda|
+    |j|Una línea siguiente|
+    |k|Una línea anterior|
+    |l|Un carácter a la derecha|
+    |w|Una palabra adelante|
+    |b|Una palabra hacia atras|
+    |^|Al principio de la línea|
+    |$|Al final de la línea|
     
+    * Colocar un prefijo como ***5h***, hara que te desplazes 5 veces a la izquierda por ejemplo.
+    * Tambien se puede usar el comando ***gg*** ó ***1g*** para ir hasta la primera linea del archivo de texto.
 
+<br>
 
-
-
-
+* Modo Comando: Acciones.
     
-    
+    |Estándar|Vi|Significado|
+    |---|---|---|
+    |cortar|d|eliminar (delete)|
+    |copiar|y|sacar (yank)|
+    |pegar|P/p|poner (put)|
+
+    * Se puede realizar estas acciones respetando cualquiera de estas dos sintaxis: ***[accion] [número/prefijo] [movimiento]*** ó ***[número/prefijo] [accion] [movimiento]*** 
+
+<br>
+
+* Eliminar: Delete suprime el texto y lo guarda en el búffer el equivalente al portapapeles de windows o macos. Algunos ejemplos en la siguiente tabla
+
+    |Acción|Resultado|
+    |---|---|
+    |dd|Elimina la línea actual|
+    |Xdd|Elimina X lineas siguientes|
+    |dw|Elimina el carácter actual|
+    |dXw|Elimina los X carácteres siguientes|
+    |dXh|Elimina X carácteres hacia la izquierda|
+
+<br>
+
+* Cambiar: Permite cambiar una linea con otra previamente almacenada en el buffer, este comando almacena la linea que va ser cambiada reemplazando aquella que ya se encontraba en el búfer.
+
+    |Acción|Resultado|
+    |---|---|
+    |cc|Cambiar la linea actial|
+    |cw|Cambiar la palabra actual|
+    |cXw|Cambiar X palabras siguientes|
+    |cXh|Cambiar X carácteres hacia la izquierda|
+
+<br>
+
+* Sacar: Coloca el contenido en el búfer sin eliminar nada
+
+    |Acción|Resultado|
+    |---|---|
+    |yy|Sacar la linea actual|
+    |Xyy|Saca X lineas siguientes|
+    |yw|Saca la palabra actual|
+    |y&|Saca el fragmento desde el cursor haste el final de la linea actual|
+
+<br>
+
+* Poner: No necesita ordenes de poscicion se ejecuta al instante.
+
+    |Acción|Resultado|
+    |---|---|
+    |p|Poner después del cursor|
+    |p|Poner antes del cursor|
+
+<br>
+
+* Buscar: Para buscar en el editor de texto vi se utiliza la siguiente sintaxis ***/[patron]***, se pueden utlizar tambien expresiones regulares.
+    * Al colocar el patron el cursor se dirige al primer resultado.
+    * Puedes ver el siguiente resultado presionando n.
+    * Para ver el resultado anterior presiona N.
+    * Para ver resultados previos a la poscicion del cursor colocando $ antes del patrón.
+
+<br>
+
+* Modo instertar: Inserta caracteres, dependendiendo de la entrada el modo insertar iniciara en cierta poscicion.
+
+    |Entrada|Función|
+    |---|---|
+    |a|Justo después del cursor|
+    |A|Al final de la línea|
+    |I|Antes del cursor|
+    |I|Al principio de la línea|
+    |o|Nueva linea después del cursor|
+    |O|Nueva Linea antes del cursor|
+
+<br>
+
+* Modo ex: Permite acceder a configuraciones del archivo como abrir, guardar o cancelar cambios. Para acceder a este modo se utiliza el siguiente carácter "***:***" 
+
+    |Entrada|Función|
+    |---|---|
+    |:w|Escribe el documento en el sistema de archivos (Guarda)|
+    |:w [Nombre]|Guarda una copia bajo el nombre que decidamos|
+    |:w:|Fuerza la escritura del documento actual|
+    |:X|Ir a la línea X del documento|
+    |:e [archivo]|Abre el archivo que escribamos|
+    |:q|Cerrar el editor de texto si no se realizaron cambios|
+    |:q!|Cerrar el editor sin guardar cambios|
+    |:wq|Guardar y salir|
 
 
 
-
+* Mas informacion sobre vi en el siguiente enlace <a href="https://www.cs.colostate.edu/helpdocs/vi.html" target="_blank">Learn vi text editor!</a>
 
 ---
 ---
