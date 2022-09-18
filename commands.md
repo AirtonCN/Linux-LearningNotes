@@ -1,6 +1,9 @@
 ## Comandos Linux Unhatched
 ### Se describen comandos sintaxis y ejemplos.
 
+<br>
+
+**Los comandos distinguen entre mayusculas y minusuculas**
 1. ***ls*** (list): Muestra todos los archivos y directorios del directiorio actual.
     * ***sl -l***: Muestra una lista detallada de los acchivos y directorios de la carpeta actual.
     * ***ls -lr***: La misma list pero muestra los archivos al reverso.
