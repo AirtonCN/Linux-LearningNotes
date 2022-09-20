@@ -5,6 +5,7 @@
 
 **Los comandos distinguen entre mayusculas y minusuculas**
 1. ***ls*** (list): Muestra todos los archivos y directorios del directiorio actual.
+    * Sintaxis: ***ls [opcion] [directorio/archivo]***
     * ***sl -l***: Muestra una lista detallada de los acchivos y directorios de la carpeta actual.
     * ***ls -lr***: La misma list pero muestra los archivos al reverso.
     * ***ls -t***: Ordena la lista por ultima fecha de modificacion.
@@ -396,9 +397,9 @@
 
 * Consola vs Shell vs CLI vs Terminal
     * Consola
-    * Shell
-    * CLI
-    * Terminal
+    * Shell: Es el programa o proceso que se encarga de ejecutar los comandos que reciba mediante el CLI.
+    * CLI: Solo es la interfaz de linea de comandos.
+    * Terminal: 
 * Sintaxis útil
     * ***.*** (Punto): Apunta al directorio actual.
     * ***..*** (Punto): Apunta al directorio anterior.
