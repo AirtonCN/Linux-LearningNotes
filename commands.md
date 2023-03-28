@@ -3,7 +3,7 @@
 
 <br>
 
-**Los comandos distinguen entre mayusculas y minusuculas**
+**El Shell de Linux Distingue entre mayusculas y minusculas**
 1. ***ls*** (list): Muestra todos los archivos y directorios del directiorio actual.
     * Sintaxis: ***ls [opcion] [directorio/archivo]***
     * ***sl -l***: Muestra una lista detallada de los acchivos y directorios de la carpeta actual.
