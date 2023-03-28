@@ -15,7 +15,7 @@
     * Se pueden combinar diferentes argumentos: ***ls -Sr***(Muestra la lista de archivos por tamaño en orden ascendente).
     * Puedes mostrar detalles de un archivo especifico con la siguiente sintaxis: ***ls -l*** [archivo].
     * ***ls -l hello.sh***: Muestra detalles unicamente del archivo hello.sh. 
-    * ***~*** representa el directorio usuario home/usuario y ***/*** representa el directorio raiz principal, ambos directorios son accesibles directamente sin especificar su ruta exacta por ejemplo ***cd ~*** te llevara al directorio de usuario desde cualquier directorio. 
+    * ***~*** representa el directorio usuario home/usuario y ***/*** representa el directorio raiz principal, ambos directorios son accesibles directamente sin especificar su ruta exacta por ejemplo ***cd ~*** te llevara al directorio de usuario desde cualquier directorio.  
 
 ---
 
