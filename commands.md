@@ -11,6 +11,7 @@
     * ***ls -t***: Ordena la lista por ultima fecha de modificacion.
     * ***ls -S***: Ordena la lista por tamaño de archivo o directorio.
     * ***ls/***: Muestra los archivos del direcorio principal "/".
+    * ***ls -a***: Muestra los archivos del directorio actual aunque esten ocultos.
     * ***ls /var/log/***: Muestra los archivos del directorio "var/log" sin importar en que carpeta estemos.
     * Se pueden combinar diferentes argumentos: ***ls -Sr***(Muestra la lista de archivos por tamaño en orden ascendente).
     * Puedes mostrar detalles de un archivo especifico con la siguiente sintaxis: ***ls -l*** [archivo].
