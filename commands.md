@@ -68,6 +68,13 @@
     * ***chmod u-x archivo***: Quita el permiso de ejecucion al usuario prop.
     * **Para cambiar permisos de grupo u otros solo cambiamos la *u* por *g* para grupos, o la letra *o* para todos los demas y *a* para todos**.
     * ***chmod u=x archivo***: Especifica el permiso exacto (Probé este comando y tambien quita permisos).
+    * Tabla simbólica para cada conjunto de permisos
+        |Símbolo|Significado|
+        |---|---|
+        |u|Usuario|
+        |g|Grupo|
+        |o|Otros|
+        |a|Todos|
 
 ---
 
@@ -395,46 +402,3 @@
 
 ---
 ---
-### Anexos
-
-* Consola vs Shell vs CLI vs Terminal
-    * Consola
-    * Shell: Es el programa o proceso que se encarga de ejecutar los comandos que reciba mediante el CLI.
-    * CLI: Solo es la interfaz de linea de comandos.
-    * Terminal: 
-* Sintaxis útil
-    * ***.*** (Punto): Apunta al directorio actual.
-    * ***..*** (Punto): Apunta al directorio anterior.
-    * Todo comando que acepte como argumento un archivo, por ejemplo: ***comando [archivo]***. Puede aceptar la direccion del archivo sin importar en que directorio te encuentres.
-* Detener comandos.
-    * Ctrl+D
-    * Ctrl+C
-
-* Regex (Regular Extended Expressions): Expresiones regulares extendidas que no todos los comandos aceptan a menos que se use el argumento adecuado.
-
-    |Regex|Descripcion|
-    |---|---|
-    |***.***|Cualquier caracter individual|
-    |***[ ]***|Cualquier caracter especificado|
-    |***[^]***|Cualquier caracter que no sea el especificado|
-    |***&ast;***|Cero o igual al caracter anterior|
-    |***^***|Como primer caracter indica que el patron debera estar al principio de la linea para coincidir, de lo contrario se lo tomara como **^**|
-    |***&dollar;***|Como ultimo caracter indica que el patron debera estar al final de la linea para coincidir, de lo contrario se tomara como ***$***|
-    
-    Expresiones para usar con ***egrep*** o ***grep -E***
-    |Regex|Descripcion|
-    |---|---|
-    |***+***|Uno o mas del patrón anterior|
-    |***?***|El patron introducido es opcional|
-    |***{ }***|Especificar un minimo o un maximo de coincidencias para el patron introducido|
-    |***&vert;***|Alternancia - or lógico|
-    |***( )***|Crea grupos|
-
-    Existen mas expresiones regulares extendidas, vease linux essentials para mas información.
-
-### Notas
-    
-* Realizar una aclaración de los comandos ping, ifconfig y ps, en onenote.
-
-```
-```
