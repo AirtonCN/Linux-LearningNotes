@@ -130,20 +130,51 @@
 ---
 
 13. ***cp*** (Copy): Copia un archivo y envialo a un directorio destino, Se debe tener como minimo permisos de ejecucion y lectura del archivo y el directorio en el que se encuentra. Se debe tener siempre estos permisos en el directorio /home y /tmp 
-    * Sintaxis desde cualquier directorio: ***cp [origen]/[archivo] [destino]***.
-    * Sintaxis para un copiar archivo en directorio actual: ***cp [archivo] [destino]***.
-    * Sintaxis para copiar un archivo al directorio actual: ***cp [origen]/ .***.
+    * Sintaxis: ***cp [origen] [destino]***.
+    * El origen es la ubicacion del archivo y el destino es donde queremos copiarlo.
+    * Se pueden utilizar rutas absolutas.
+        ```
+        sysadmin@localhost:~/Documents$ cp /etc/passwd .
+        ```
+    * El comando anterior copia el archivo passwd en el directorio Documents (el directorio actual de trabajo).
+    * Para copiar un archivo dentro del mismo directorio en el que se encuentra este debemos renombrar primero.
+        ```
+        sysadmin@localhost:~/Documents$ cp passwd pass
+        ```
+    * Este comando copia en passwd en su mismo directorio y renombra la copia como pass.
+        ```
+        sysadmin@localhost:~/Documents$ ls
+        School            alpha-third.txt  hidden.txt    numbers.txt  red.txt   people.csv           
+        Work              alpha.txt        letters.txt   os.csv                                            
+        adjectives.txt    animals.txt      linux.txt     passwd                         
+        alpha-first.txt   food.txt         longfile.txt  pass                     
+        alpha-second.txt  hello.sh         newhome.txt   profile.txt
+        ```
+    * La carpeta quedaria asi, notese pass y passwd en la misma columna.
 
 ---
 
-14. ***dd*** (Disk/Data Duplicate): Copia/clona particiones de disco completas, crea archivos con un tamalo especifico, realiza backups, copia datos no procesados.
+14. ***dd*** (Disk/Data Duplicate): Copia/clona particiones de disco completas, crea archivos con un tamaño específico, realiza backups, copia datos no procesados.
     * Sintaxis para crear archivo de un tamaño específico: ***dd if=[entrada] of=[salida] bs=[tamaño] count=[cantidad]***
     * ***if*** (Input file): Direccion completa del archivo de entrada.
     * ***of*** (Output file): Direccion completa del archivo de salida.
     * ***bs*** (Block size): Tamañao de bloque en bytes, se puede usar K,M,G,T.
+        |Símbolo|Significado|
+        |---|---|
+        |Ninguno|Byte|
+        |K|Kilobyte|
+        |M|Megabyte|
+        |G|Gigabyte|
+        |T|Terabyte|
     * ***count*** (Cuenta): Cuantos bloques del tamaño extablecido se usaran.
     * Para copiar particiones discos o directorios completos no es necesario especificar el tamaño. Sintaxis: ***dd if=[entrada] of=[salida]***.
-
+        ```
+        sysadmin@localhost:~$ dd if=/dev/zero of=/tmp/swapex bs=1M count=50 
+        50+0 records in
+        50+0 records out
+        52428800 bytes (52 MB) copied, 0.825745 s, 635 MB/s
+        ```
+    * El comando dd creará un archivo denominado /tmp/swapex con 50 bloques de ceros de un megabyte de tamaño.
 ---
 
 15. ***mv*** (Move): Mover archivos entre ubicaciones del sistema. Mover el archivo dentro del mismo directorio resulta en el cambio de nombre del archivo. Este comando requiere como minimo permisos de escritura y ejecución.
@@ -161,7 +192,7 @@
     * Sintaxis para directorios: ***rm -r [directorio]***
     * ***rm animals.txt***: Elimina el archivo animals.txt.
     * ***rm -r Documents***: Elimina el directorio Documents.
-
+    * ***rm -fr Documents***: Fuerza la eliminación del directorio documents (Usar con precaución).
 ---
 
 17. ***grep*** (Global regular expresion print): Filtra entradas de un archivo, busca e imprime y una linea de un archivo de acuerdo aun patron definido en el comando.
