@@ -27,7 +27,7 @@
     * ***cd /***: Cambia al directorio principal.
     * ***cd .***: Señala al directorio actual.
     * Nota: Puedes concatenar varios directorios.
-    * Puedes ingresar a cualquier directorio desde cualquier directorio con la siguiente sintaxis: ***cd [directorio raíz]/[subdirectorio]/[subdirectorio]***.
+    * Puedes ingresar a cualquier directorio desde cualquier directorio utilizando rutas absolutas.
 
 ---
 
@@ -41,17 +41,30 @@
     * ***su -***: Ingresa al modo administrativo.
     * ***su -l***: Ingresa al modo administrativo.
     * ***su --login***: Ingresa al modo administrativo.
+        ```
+        sysadmin@localhost:~$ su  -
+        Password:
+        root@localhost:~#
+        ```
+    * Nótese que en el shell sysadmin se cambia por root.
 
 ---
 
 5. ***sl*** (Steam locomotive): Este comando ejecuta una animacion de un tren a vapor en el shell.
     * Este comando solo se puede ejecutar en el modo administrativo.
+
 ---
 
-6. ***sudo*** (substitute user do): Este comando permite ejecutar cualquier otro en modoadministrativo tambien ejecuta como usuario root administrativo sin crear otro shell.
+6. ***sudo*** (substitute user do): Ejecuta comandos como usuario root administrativo sin crear otro shell.
     * Tambien solicittara una contraseña, una sola vez.
     * ***sudo sl***: Ejecuta la animacion del tren a vapor.
-
+        ```
+        sysadmin@localhost:~$ sudo sl
+        Password:
+        sysadmin@localhost:~$
+        ```
+    * Se sigue mostrando sysadmin en el shell.
+    * Este comando pide la contraseña una sola vez.
 ---
 
 7. ***exit*** (exit): Se usa para salir del modo administrativo ***su***.
@@ -66,8 +79,8 @@
     * ***chmod u-r archivo***: Quita el permiso de lectura al usuario prop.
     * ***chmod u+x archivo***: Agrega el premiso de ejecucion al usuario prop.
     * ***chmod u-x archivo***: Quita el permiso de ejecucion al usuario prop.
+    * ***chmod u=x archivo***: Especifica el permiso exacto, eliminara todos los permisos y solo otorgará el especificado-
     * **Para cambiar permisos de grupo u otros solo cambiamos la *u* por *g* para grupos, o la letra *o* para todos los demas y *a* para todos**.
-    * ***chmod u=x archivo***: Especifica el permiso exacto (Probé este comando y tambien quita permisos).
     * Tabla simbólica para cada conjunto de permisos
         |Símbolo|Significado|
         |---|---|
@@ -79,8 +92,18 @@
 ---
 
 9. ***./*** (Ejecutar script): Se utiliza para ejecutar un script cualquiera ubicado en el directorio actual
-    * Sintaxis: ***./ [script]***.
-    * ***./ hello.sh***: Ejecuta el script hello.sh.
+    * Sintaxis: ***./[script]***.
+    * ***./hello.sh***: Ejecuta el script hello.sh.
+        ```
+        sysadmin@localhost:~/Documents$ ./hello.sh                                      
+        ______________                                                                 
+        ( Hello World! )                                                                
+        --------------                                                                 
+               \                                                                       
+                \                                                                      
+                <(^)                                                                 
+                 ( )
+        ```
 
 ---
 
