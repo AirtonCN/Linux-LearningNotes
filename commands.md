@@ -175,6 +175,7 @@
         52428800 bytes (52 MB) copied, 0.825745 s, 635 MB/s
         ```
     * El comando dd creará un archivo denominado /tmp/swapex con 50 bloques de ceros de un megabyte de tamaño.
+    * Se puede utilizar rutas absolutas / .. . en los argumentos de ***if*** y ***of***.
 ---
 
 15. ***mv*** (Move): Mover archivos entre ubicaciones del sistema. Mover el archivo dentro del mismo directorio resulta en el cambio de nombre del archivo. Este comando requiere como minimo permisos de escritura y ejecución.
