@@ -57,6 +57,7 @@
 
 6. ***sudo*** (substitute user do): Ejecuta comandos como usuario root administrativo sin crear otro shell.
     * Tambien solicittara una contraseña, una sola vez.
+    * ***sudo -i***: Ingresa al modo administrativo en UBUNTU.
     * ***sudo sl***: Ejecuta la animacion del tren a vapor.
         ```
         sysadmin@localhost:~$ sudo sl
@@ -129,7 +130,7 @@
 
 ---
 
-13. ***cp*** (Copy): Copia un archivo y envialo a un directorio destino, Se debe tener como minimo permisos de ejecucion y lectura del archivo y el directorio en el que se encuentra. Se debe tener siempre estos permisos en el directorio /home y /tmp 
+13. ***cp*** (Copy): Copia un archivo y envialo a un directorio destino, Se debe tener como minimo permisos de ejecucion y lectura tanto del archivo como del directorio en el que se encuentra. Se debe tener siempre estos permisos en el directorio /home y /tmp
     * Sintaxis: ***cp [origen] [destino]***.
     * El origen es la ubicacion del archivo y el destino es donde queremos copiarlo.
     * Se pueden utilizar rutas absolutas.
@@ -176,13 +177,15 @@
         ```
     * El comando dd creará un archivo denominado /tmp/swapex con 50 bloques de ceros de un megabyte de tamaño.
     * Se puede utilizar rutas absolutas / .. . en los argumentos de ***if*** y ***of***.
+    * No es necesario especificar el tamaño de bloque ni el recuento cuando se copian archivos enteros.
+
 ---
 
 15. ***mv*** (Move): Mover archivos entre ubicaciones del sistema. Mover el archivo dentro del mismo directorio resulta en el cambio de nombre del archivo. Este comando requiere como minimo permisos de escritura y ejecución.
     * Sintaxis: ***mv [origen] [destino]***
     * ***mv people.csv Work***: mueve el archivo people.csv del directorio actual al subdirectiorio Work del directorio actual.
     * ***mv Work/people.csv .***: Mueve el archivo people.csv del subdirectorio Work al directorio actual.
-    * ***mv animals.txt zoo.txt***: Cambia de nombre el archivo de animals.txt a zoo.txt.
+    * ***mv animals.txt zoo.txt***: Renombra el archivo de animals.txt a zoo.txt.
     * Se pueden mover varios archivos con la siguiente sintaxis: ***mv [archivo1] [archivo2] [archivo3] [destino]***.
     * ***mv alpha.txt letters.txt os.csv School***: Mueve tres archivos txt y un csv al directorio School.
 
@@ -194,19 +197,28 @@
     * ***rm animals.txt***: Elimina el archivo animals.txt.
     * ***rm -r Documents***: Elimina el directorio Documents.
     * ***rm -fr Documents***: Fuerza la eliminación del directorio documents (Usar con precaución).
+    
 ---
 
 17. ***grep*** (Global regular expresion print): Filtra entradas de un archivo, busca e imprime y una linea de un archivo de acuerdo aun patron definido en el comando.
     * Sintaxis: ***grep [opciones] [patron] [archivo]***
     * ***grep sysadmin passwd***: Muestra detalles del usuario sysadmin, detalles que se encuentran en el archivo passwd, mas info de este archivo en linux essentials.
+        ```
+        sysadmin@localhost:~/Documents$ grep sysadmin passwd                               
+        sysadmin:x:1001:1001:System Administrator,,,,:/home/sysadmin:/bin/bash 
+        ```
+    * En resumen muestra la linea del archivo que contiene el patron que escribímos, en este caso sysadmin.
     * Este comando puede interpretar patrones de busqueda mucho mas complejos.
     * Se debe poner comillas simples en el patron para que este no sea confundido con un comando especial del shell.
     * ***grep 'r..d' alpha.txt***: Encuentra todos las coincidencias con el patron 'r..d' donde los puntos simbolizan cualquier caracter.
     * ***grep '[0-9]' profile.txt***: Encuentra caracteres numéricos y muestra las lineas donde estan.
     * ***grep '[^0-9]' profile.txt***: Muestra lineas que contengan carácteres no numéricos, omite las que tienen carácteres puramente numéricos.
-    * ***grep 're*d' red.txt***: Muestra lineas que contengan el caracter "e" repetido de manera corrida, o en su defecto, su ausencia total.Tambien deben contener "r" al principio y "d" al final.   
+    * ***grep 're*d' red.txt***: Muestra lineas que contengan el caracter "e" repetido de manera corrida, o en su defecto, su ausencia total.Tambien deben contener "r" al principio y "d" al final.
     * ***grep 'r[oe]*d' red.txt***: Muestra lineas que contengan los caracteres "o" o "e" repetido de manera corrida, o en su defecto, la auscencia total de ambos. Tambien deben contener "r" al principio y "d" al final de cada linea.
-    * ***grep 'red'***: El shell nos permitira introducir caracteres para luego identificar aquellas lineas que contengan "red" en el texto introducido.
+    * ***grep 'red'***: El shell nos permitira introducir caracteres para luego identificar aquellas lineas que contengan "red" en el texto introducido. Tambien se pueden usar otro tipo de filtro de entrada.
+    * ***grep '....' red.txt***: Muestra las lineas con cadenas de por lo menos 4 carácteres, el espacio tambien cuenta com un carácter.
+    * ***egrep*** o ***grep -E***: Para utiliazar epresiones regulares extendidas
+    * Revisar expresiones regulares en los anexos.
 
 ----
 
@@ -331,6 +343,14 @@
     * ***echo wao***: Muestra el mensaje "wao". 
     * ***echo "I like Food." > newfile1.txt***: Sobre escribe el contenido de newfile1.txt colocando en su lugar "I like food.", Sin comillas.
     * ***echo "I like Food." >> newfile1.txt***: Agrega una linea con el texto escrito sin sobreescribir el archivo.
+
+---
+
+26. ***loadkeys*** (Cargar teclas): Para poder cambian el método de entrada del teclado dependiendo del idioma.
+    * Sintaxis: ***loadkeys [idioma]***
+    * ***loadkeys us***: cambia el metodo de entrada del teclado a inglés estadounidense.
+    * ***loadkeys es***: cambia el metodo de entrada del teclado a español.
+    * Muy útil en linux server.
 
 ---
 ## Editor de texto
